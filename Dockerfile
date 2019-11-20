@@ -19,4 +19,8 @@ RUN apt-get update \
     && apt-get install -y docker-ce-cli \
     && apt-get autoclean
 
+RUN mkdir /home/jenkins/workspace && \
+    chown -R jenkins:jenkins /home/jenkins/workspace && \
+    chown -R 777 /home/jenkins/workspace
+
 USER jenkins
